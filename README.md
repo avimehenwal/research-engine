@@ -25,4 +25,8 @@ Multi faceted search, same search multiple context
 ### UI
 
 * https://vuejs.org/resources/themes.html
-*
+
+
+```sh
+vue add vuex
+```
