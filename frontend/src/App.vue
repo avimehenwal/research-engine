@@ -1,18 +1,16 @@
 <template>
-  <v-app>
-    <v-content>
-      <router-view></router-view>
-      <!-- <Home :searchTerm="searchTerm"/> -->
-    </v-content>
-  </v-app>
+  <div id="app">
+    <HelloWorld/>
+  </div>
 </template>
 
 <script>
-// import Home from '@/views/Home.vue'
+import HelloWorld from './components/HelloWorld.vue'
+
 export default {
-  name: 'App'
-  // components: {
-  //   Home
-  // },
+  name: 'App',
+  components: {
+    HelloWorld
+  }
 }
 </script>

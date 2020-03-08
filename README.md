@@ -10,6 +10,8 @@ Multi faceted search, same search multiple context
 * [ ] Tabbed view on sources
 * [ ] Enable disable sources
 
+> Some websites use frame Killer code
+
 ## Sources
 
 1. https://products.wolframalpha.com/api/
@@ -30,3 +32,9 @@ Multi faceted search, same search multiple context
 ```sh
 vue add vuex
 ```
+
+## Issues
+
+Most websites use **framekiller code** HTTP Header `x-frame-options: deny`.
+HTTP headers are used to pass additional information with HTTP response or HTTP requests. The X-Frame-Options is used to prevent the site from clickjacking attacks.
+
