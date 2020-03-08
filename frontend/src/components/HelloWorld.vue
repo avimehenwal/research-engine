@@ -6,7 +6,7 @@
         {{item}}
       </button>
     </a>
-    <a :href="computedUrl">{{computedUrl}}</a>
+    <a target="_blank" :href="computedUrl">{{computedUrl}}</a>
 
     <iframe src="" height="80%" width="100%" name="frame" scrolling="yes"></iframe>
   </div>
