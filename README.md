@@ -38,3 +38,6 @@ vue add vuex
 Most websites use **framekiller code** HTTP Header `x-frame-options: deny`.
 HTTP headers are used to pass additional information with HTTP response or HTTP requests. The X-Frame-Options is used to prevent the site from clickjacking attacks.
 
+Communicating from a parent window to a child iframe is a known problem in JavaScript and has already been solved
+
+
