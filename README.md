@@ -33,8 +33,7 @@ Multi faceted search, same search multiple context
 
 ```sh
 vue add vuex
-firebase deploy --only hosting
-
+yarn build; firebase deploy --only hosting
 ```
 
 ## Issues
