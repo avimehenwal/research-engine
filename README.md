@@ -33,8 +33,7 @@ Multi faceted search, same search multiple context
 
 ```sh
 vue add vuex
-firebase deploy --only hosting
-
+yarn build; firebase deploy --only hosting
 ```
 
 ## Issues
@@ -46,4 +45,6 @@ Communicating from a parent window to a child iframe is a known problem in JavaS
 
 iframes are blocked by after certain number of requests
 
+### Metadata
 
+* [Release names, inspired from 1A student names](https://www.cbr.com/my-hero-academia-class-1-a-ranked/)
