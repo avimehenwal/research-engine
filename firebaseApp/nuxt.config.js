@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -48,25 +49,26 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    [
-      '@nuxtjs/firebase',
-      {
-        config: {
-          apiKey: '<apiKey>',
-          authDomain: '<authDomain>',
-          databaseURL: '<databaseURL>',
-          projectId: '<projectId>',
-          storageBucket: '<storageBucket>',
-          messagingSenderId: '<messagingSenderId>',
-          appId: '<appId>',
-          measurementId: '<measurementId>'
-        },
-        services: {
-          auth: true // Just as example. Can be any other service.
-        }
-      }
-    ]
+    '@nuxtjs/firebase',
   ],
+  firebase: {
+    config: {
+      appId: process.env.appId,
+      apiKey: process.env.apiKey,
+      projectId: process.env.projectId,
+      authDomain: process.env.authDomain,
+      databaseURL: process.env.databaseURL,
+      storageBucket: process.env.storageBucket,
+      messagingSenderId: process.env.messagingSenderId,
+      measurementId: process.env.measurementId
+    },
+    services: {
+      auth: true // Just as example. Can be any other service.
+    }
+  },
+  dotenv: {
+    systemvars: false
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
