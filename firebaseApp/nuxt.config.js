@@ -63,7 +63,15 @@ export default {
       measurementId: process.env.measurementId
     },
     services: {
-      auth: true // Just as example. Can be any other service.
+      auth: true,
+      firestore: true,
+      functions: true,
+      storage: true,
+      realtimeDb: true,
+      messaging: true,
+      performance: true,
+      analytics: true,
+      remoteConfig: true
     }
   },
   dotenv: {

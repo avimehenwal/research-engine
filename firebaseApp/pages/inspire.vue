@@ -20,17 +20,17 @@
             @keydown.enter="addtolist"
           ></v-textarea>
         <v-list shaped>
-          <v-list-item v-for="(item, index) in todolist" :key="item">
+          <v-list-item v-for="(item, index) in todolist" :key="item.id">
             <v-list-item-title>
               <v-chip outlined small>
                 {{index + 1}}
               </v-chip>
               <strong>
-                {{ item }}
+                {{ item.text }}
               </strong>
             </v-list-item-title>
             <v-list-item-action>
-              <v-btn @click="removeitem(index)" fab small>
+              <v-btn @click="removeitem(item.id)" fab small>
                 <v-icon color="error">mdi-delete-forever</v-icon>
               </v-btn>
             </v-list-item-action>
@@ -46,7 +46,6 @@
 </template>
 
 <script>
-
 export default {
   data () {
     return {
@@ -57,7 +56,7 @@ export default {
   methods: {
     addtolist () {
       if (this.value) {
-        this.$store.commit('addtoList', this.value)
+        this.$store.dispatch('addITEM', this.value)
         this.value = null
       }
     },
@@ -65,8 +64,8 @@ export default {
       this.$store.commit('popList')
     },
     removeitem (index) {
-      console.log('remove from list')
-      this.$store.commit('removeList', index)
+      this.$store.dispatch('removeITEM', index)
+      // this.$store.commit('removeList', index)
     }
   },
   computed: {
@@ -80,6 +79,9 @@ export default {
     listCount () {
       return this.$store.state.todo_list.length
     }
+  },
+  mounted () {
+    this.$store.dispatch('loadTODOLIST')
   }
 
 }
