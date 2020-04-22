@@ -1,5 +1,8 @@
 export const state = () => ({
-  todo_list: [],
+  todo_list: [
+    'Buy Apples',
+    'Ride Bicycle'
+  ],
   counter: 0
 })
 
