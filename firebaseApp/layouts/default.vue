@@ -103,7 +103,7 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
+          title: 'Todo List',
           to: '/inspire'
         }
       ],
