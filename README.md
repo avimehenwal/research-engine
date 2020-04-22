@@ -48,3 +48,6 @@ iframes are blocked by after certain number of requests
 ### Metadata
 
 * [Release names, inspired from 1A student names](https://www.cbr.com/my-hero-academia-class-1-a-ranked/)
+* [Nuxt Firebase](https://firebase.nuxtjs.org/guide/getting-started/)
+  * automated the setup of onAuthStateChanged() fo Firebase Authentication
+  * use firebase as module
