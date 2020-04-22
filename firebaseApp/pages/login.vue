@@ -6,7 +6,7 @@
         <v-text-field
           v-model="email"
           label="E-mail"
-        ></v-text-field>
+        />
         <v-text-field
           v-model="password"
           :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -17,13 +17,19 @@
           hint="At least 8 characters"
           counter
           @click:append="show1 = !show1"
-        ></v-text-field>
+        />
       </v-form>
     </v-card-text>
     <v-card-actions>
-        <v-btn color="error" class="mr-4" @click="reset" > Reset Form </v-btn>
-        <v-btn color="warning" class="mr-4" @click="existingUser"> Already has a Account </v-btn>
-        <v-btn color="success" class="mr-4" @click="newUser" > Register New user </v-btn>
+      <v-btn color="error" class="mr-4" @click="reset">
+        Reset Form
+      </v-btn>
+      <v-btn color="warning" class="mr-4" @click="existingUser">
+        Already has a Account
+      </v-btn>
+      <v-btn color="success" class="mr-4" @click="newUser">
+        Register New user
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
