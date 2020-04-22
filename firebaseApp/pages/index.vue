@@ -29,7 +29,7 @@
             </strong>
           </v-list-item-title>
           <v-list-item-action>
-            <v-btn fab small @click="removeitem(item.id)">
+            <v-btn fab small depressed @click="removeitem(item.id)">
               <v-icon color="error">
                 mdi-delete-forever
               </v-icon>
