@@ -105,6 +105,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Todo List',
           to: '/inspire'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'New User',
+          to: '/login'
         }
       ],
       miniVariant: false,

@@ -1,7 +1,8 @@
 export const state = () => ({
   // {id: "fL136KlJNQNssVoOmO4r", text: "Buy Apples FST"}
   todo_list: [],
-  counter: 0
+  counter: 0,
+  loggedin: false
 })
 
 export const mutations = {
