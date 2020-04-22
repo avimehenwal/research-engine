@@ -1,44 +1,50 @@
 <template>
   <v-card>
     <v-card-title>
-        Todo Application
-        <v-spacer></v-spacer>
-        <v-chip color="primary">
-          {{ listCount }}
-        </v-chip>
+      Todo Application
+      <v-spacer />
+      <v-chip color="primary">
+        {{ listCount }}
+      </v-chip>
     </v-card-title>
     <v-card-text>
-        <v-textarea
-          label="Add New item to Todo list"
-          clearable
-          counter
-          outlined
-          rounded
-          rows="1"
-          v-model="value"
-          @keydown.enter="addtolist"
-        ></v-textarea>
+      <v-textarea
+        v-model="value"
+        label="Add New item to Todo list"
+        clearable
+        counter
+        outlined
+        rounded
+        rows="1"
+        @keydown.enter="addtolist"
+      />
       <v-list shaped>
         <v-list-item v-for="(item, index) in todolist" :key="item.id">
           <v-list-item-title>
             <v-chip outlined small>
-              {{index + 1}}
+              {{ index + 1 }}
             </v-chip>
             <strong>
               {{ item.text }}
             </strong>
           </v-list-item-title>
           <v-list-item-action>
-            <v-btn @click="removeitem(item.id)" fab small>
-              <v-icon color="error">mdi-delete-forever</v-icon>
+            <v-btn fab small depressed @click="removeitem(item.id)">
+              <v-icon color="error">
+                mdi-delete-forever
+              </v-icon>
             </v-btn>
           </v-list-item-action>
         </v-list-item>
       </v-list>
     </v-card-text>
     <v-card-actions>
-      <v-btn color="error" @click="poplist">Pop item -</v-btn>
-      <v-btn color="success" @click="addtolist()" :disabled="addtolistbtnstate">ADD to list +</v-btn>
+      <v-btn color="error" @click="poplist">
+        Pop item -
+      </v-btn>
+      <v-btn color="success" :disabled="addtolistbtnstate" @click="addtolist()">
+        ADD to list +
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -49,21 +55,6 @@ export default {
     return {
       todolist: this.$store.state.todo_list,
       value: ''
-    }
-  },
-  methods: {
-    addtolist () {
-      if (this.value) {
-        this.$store.dispatch('addITEM', this.value)
-        this.value = null
-      }
-    },
-    poplist () {
-      this.$store.commit('popList')
-    },
-    removeitem (index) {
-      this.$store.dispatch('removeITEM', index)
-      // this.$store.commit('removeList', index)
     }
   },
   computed: {
@@ -80,6 +71,21 @@ export default {
   },
   mounted () {
     this.$store.dispatch('loadTODOLIST')
+  },
+  methods: {
+    addtolist () {
+      if (this.value) {
+        this.$store.dispatch('addITEM', this.value)
+        this.value = null
+      }
+    },
+    poplist () {
+      this.$store.commit('popList')
+    },
+    removeitem (index) {
+      this.$store.dispatch('removeITEM', index)
+      // this.$store.commit('removeList', index)
+    }
   }
 
 }
